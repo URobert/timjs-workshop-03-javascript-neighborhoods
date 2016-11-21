@@ -27,7 +27,23 @@
 
         </div>
 
-        <script src="dist/vendor.js"></script>
-        <script src="dist/bundle.js"></script>
+<!--        <script src="dist/vendor.js"></script>-->
+<!--        <script src="dist/bundle.js"></script>-->
+
+        <script src="/node_modules/systemjs/dist/system.js"></script>
+        <script>
+          // set our baseURL reference path
+        SystemJS.config({
+         map: {
+           'plugin-babel': '/node_modules/systemjs-plugin-babel/plugin-babel.js',
+           'systemjs-babel-build': '/node_modules/systemjs-plugin-babel/systemjs-babel-browser.js',
+           'jquery': '/vendor/jquery-2.1.4.js'
+         },
+         transpiler: 'plugin-babel'
+       });
+        
+          // loads /js/main.js
+          SystemJS.import('src/main.js');
+        </script>
     </body>
 </html>

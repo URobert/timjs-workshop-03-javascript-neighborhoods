@@ -59,9 +59,9 @@ gulp.task('default', ['jsVendor', 'jsSrc'], () => {
     browserSync.init({
         server: {
             baseDir: BASE_PATH,
-            //routes: {
-            //    '/node_modules': 'node_modules'
-            //}
+            routes: {
+                '/node_modules': 'node_modules'
+            }
         }
     });
 
